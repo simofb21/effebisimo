@@ -2,7 +2,7 @@
   "help": {
     "title": "Comandi disponibili:",
     "whoami": "chi sono, con una mia foto",
-    "gimme_cv": "apre il mio CV (PDF)",
+    "gimme_cv": "Apre il mio CV (PDF) in un'altra scheda del browser",
     "projects": "elenco dei progetti (projects [nome] per i dettagli)",
     "best-ride": "apre best-ride.vercel.app in una nuova scheda",
     "links": "i miei profili: Strava, GitHub, ecc.",

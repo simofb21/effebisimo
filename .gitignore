@@ -22,3 +22,35 @@ logs
 .env
 .env.*
 !.env.example
+
+# Dipendenze
+node_modules
+
+# Output di build e cache di Nuxt
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+# Log
+*.log
+logs
+
+# Variabili d'ambiente (segreti)
+.env
+.env.*
+!.env.example
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# Vercel
+.vercel
