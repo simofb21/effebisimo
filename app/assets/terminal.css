@@ -373,3 +373,87 @@ a,
   height: 220px;
   object-fit: cover;
 }
+/* --- ARCH LINUX NEOFETCH / FASTFETCH --- */
+.neofetch-box {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.neofetch-ascii {
+  margin: 0;
+  color: #1793d1; /* Blu ufficiale Arch Linux */
+  font-weight: bold;
+  line-height: 1.15;
+  font-size: 13px;
+  user-select: none;
+}
+.neofetch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.neofetch-sep {
+  opacity: 0.5;
+  margin-bottom: 0.2rem;
+}
+.neofetch-key {
+  color: #1793d1;
+  font-weight: bold;
+}
+.neofetch-colors {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+.neofetch-colors span {
+  display: inline-block;
+  width: 1.8ch;
+  height: 1.1em;
+  border-radius: 2px;
+}
+.c-blk {
+  background: #222;
+}
+.c-red {
+  background: var(--red);
+}
+.c-grn {
+  background: var(--green);
+}
+.c-ylw {
+  background: #f1fa8c;
+}
+.c-blu {
+  background: var(--blue);
+}
+.c-mag {
+  background: #ff79c6;
+}
+.c-cyn {
+  background: #1793d1;
+}
+.c-wht {
+  background: var(--fg);
+}
+
+.fade-line {
+  opacity: 0;
+  animation: termFadeIn 0.08s forwards;
+}
+@keyframes termFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .neofetch-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .neofetch-ascii {
+    font-size: 10px;
+  }
+}

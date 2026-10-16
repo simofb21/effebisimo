@@ -1,6 +1,7 @@
 import { projectsList } from "~/data/content";
 
 export type OutputType =
+  | "neofetch"
   | "help"
   | "dirs"
   | "project-detail"
@@ -20,6 +21,9 @@ export interface Line {
 
 export function useTerminal() {
   const { setLocale } = useI18n();
+  function cmdNeofetch(input: string) {
+    push(input, "neofetch");
+  }
   const lines = ref<Line[]>([]);
   const history: string[] = [];
   let histIdx = 0;
@@ -117,6 +121,8 @@ export function useTerminal() {
     string,
     (input: string, args: string[]) => void | Promise<void>
   > = {
+    fastfetch: (input) => cmdNeofetch(input),
+    neofetch: (input) => cmdNeofetch(input),
     man: (input) => cmdMan(input),
     whoami: (input) => cmdWhoami(input),
     gimme_cv: (input) => cmdGimmeCv(input),

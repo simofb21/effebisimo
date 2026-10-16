@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { projectsList } from "~/data/content";
+import NeofetchOut from "./output/NeoFetchOut.vue";
 import ProjectDetailOut from "./output/ProjectDetailOut.vue";
 import WhoamiOut from "./output/WhoamiOut.vue";
 import LinksOut from "./output/LinksOut.vue";
@@ -23,15 +24,24 @@ const helpItems = [
   "clear",
 ];
 
-onMounted(async () => {
-  await sleep(700);
-  for (const ch of "man") {
+async function typeAndRun(cmdText: string, speed = 70) {
+  for (const ch of cmdText) {
     input.value += ch;
-    await sleep(90);
+    await sleep(speed);
   }
-  await sleep(350);
-  run(input.value);
+  await sleep(220);
+  await run(input.value);
   input.value = "";
+}
+
+onMounted(async () => {
+  await sleep(300);
+  // 1. Esegue fastfetch in stile Arch Linux all'apertura
+  await typeAndRun("fastfetch", 45);
+  await sleep(650);
+  // 2. Digita ed esegue man
+  await typeAndRun("man", 90);
+
   typing.value = false;
   await nextTick();
   inputEl.value?.focus();
@@ -83,8 +93,11 @@ function onKey(e: KeyboardEvent) {
         {{ l.cmd }}
       </div>
 
+      <!-- ARCH FASTFETCH / NEOFETCH -->
+      <NeofetchOut v-if="l.type === 'neofetch'" />
+
       <!-- MAN / HELP -->
-      <div v-if="l.type === 'help'" class="out">
+      <div v-else-if="l.type === 'help'" class="out">
         <p>{{ t("help.title") }}</p>
         <div v-for="c in helpItems" :key="c" class="row">
           <span class="cmd clickable" @click.stop="runQuickCommand(c)">{{
@@ -111,8 +124,8 @@ function onKey(e: KeyboardEvent) {
 
       <!-- DETTAGLIO SINGOLO PROGETTO -->
       <ProjectDetailOut
-        v-else-if="l.type === 'project-detail'"
         :slug="l.params?.slug ?? ''"
+        v-else-if="l.type === 'project-detail'"
       />
 
       <!-- WHOAMI -->
