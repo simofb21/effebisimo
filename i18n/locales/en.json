@@ -1,36 +1,103 @@
 {
   "help": {
-    "title": "Available commands:",
-    "whoami": "Print user identity and bio",
-    "gimme_cv": "Download my CV",
-    "projects": "List available projects. Use 'projects [project_name]' for details",
-    "best-ride": "Launch Best-Ride: my core project",
-    "links": "Display links to external profiles and platforms",
-    "cycling": "Show cycling history and background",
-    "lang": "Switch language",
-    "clear": "Clear the terminal screen"
-  },
-  "placeholder": {
-    "whoami": "[placeholder] Bio description and photo will be displayed here.",
-    "gimme_cv": "[placeholder] CV will be opened here.",
-    "best-ride": "[placeholder] best-ride.vercel.app will be launched here.",
-    "links": "[placeholder] Profile links will be displayed here.",
-    "cycling": "[placeholder] Cycling history and gallery will be displayed here."
-  },
-  "projects": {
-    "hint": "Usage: projects [project_name]",
-    "detail": "Project {name} (current placeholder). Detailed information will appear here."
-  },
-  "lang": {
-    "changed": "Language set: English",
-    "usage": "Usage: lang it"
-  },
-  "errors": {
-    "notFound": "{cmd}: command not found. \nType 'man' for manual entry.",
-    "projectNotFound": "Project not found: {name}. \nType 'projects' for the list."
+    "title": "Available commands (type or tap a command):",
+    "whoami": "Find out who I am",
+    "gimme_cv": "Download my CV (JPEG) to your device",
+    "projects": "List all projects. Use 'projects [name]' for details",
+    "best-ride": "Opens Best-Ride: my main project",
+    "links": "Show links to all my profiles",
+    "cycling": "Discover my cycling story",
+    "lang": "Switch language (lang it / lang en)",
+    "clear": "Clear the terminal"
   },
   "actions": {
-    "cv_downloaded": "Downloading CV (cv.jpeg)...",
+    "cv_downloaded": "Downloading CV (CV_Simone.jpeg)...",
     "best_ride_opened": "Opening https://best-ride.vercel.app in a new tab..."
+  },
+  "whoami": {
+    "h1": "Simone",
+    "intro": "I'm Simone: Computer Science student at the University of Milan (UniMi) and an amateur cyclist.",
+    "sections": {
+      "cycling": {
+        "title": "Cycling",
+        "body": "I used to be a competitive cyclist; for the past 2 years I've been riding at an amateur level, still giving it my all every time."
+      },
+      "cs": {
+        "title": "Computer Science",
+        "body": "I love coding, experimenting with new technologies, and building real-world projects from scratch. I'm deeply interested in Artificial Intelligence, modern full-stack web development, and sports data analytics."
+      },
+      "education": {
+        "title": "Education",
+        "body": "I have just started my Bachelor's Degree in Computer Science at UniMi. Previously, I attended the Galilei Technical Institute for Computer Science in Crema."
+      },
+      "work": {
+        "title": "What I do",
+        "body": "I'm available to collaborate on projects — if you need anything, feel free to reach out at my email: "
+      },
+      "passions": {
+        "title": "Passions",
+        "body": "• Sports: Cycling, sports in general, football, fantasy football (Fantacalcio).\n• Music: I love listening to music that hypes me up while riding my bike. In particular, I'm into Italian underground rap.\n• Tech & Security: Coding is definitely a passion, but I also enjoy competing in CTFs (Capture The Flag), cybersecurity competitions — for instance, I took part in the OliCyber.it projects."
+      },
+      "other": {
+        "title": "Other",
+        "body": "Nothing to add."
+      }
+    }
+  },
+  "links": {
+    "title": "# Click on any link to open it:"
+  },
+  "cycling": {
+    "description": "I started early, and I still keep that same passion burning inside. Even if my legs are certainly not Pogačar's.",
+    "scrollHint": "↔ Scroll photos (5):"
+  },
+  "projects": {
+    "hint": "Usage: projects [project_name] (or tap a folder above)",
+    "noSource": "No source code available",
+    "labels": {
+      "status": "Status",
+      "tech": "Tech stack",
+      "repo": "Link / Repo"
+    },
+    "status": {
+      "active-dev": "Active - In development",
+      "active-done": "Active - Completed",
+      "archived": "Archived",
+      "closed": "Closed"
+    },
+    "items": {
+      "best-ride": {
+        "description": "PWA that analyzes your cycling activities and generates detailed AI-powered workout insights. Displays stats such as Power Records, TSS, workout details, and more."
+      },
+      "mercatino": {
+        "description": "Customer website and management system for the Used Books Market in Crema. Built in collaboration with Andrea Parolari."
+      },
+      "effebisimo": {
+        "description": "What you are looking at right now."
+      },
+      "iris": {
+        "description": "Project built during my internship at BiCtrl in Leipzig. Frontend for an internal company application."
+      },
+      "appunti-unimi": {
+        "description": "Lecture notes from University."
+      },
+      "meteo-api": {
+        "description": "Web app using an external API to provide weather information for locations across Lombardy."
+      },
+      "fb-bike": {
+        "description": "Website where I used to publish articles about cycling."
+      },
+      "donatos": {
+        "description": "Web app designed to let users on the same network communicate simply and reliably."
+      }
+    }
+  },
+  "lang": {
+    "changed": "Language set to: English 🇬🇧",
+    "usage": "Usage: lang [it|en]"
+  },
+  "errors": {
+    "notFound": "{cmd}: command not found.\nType 'man' for the command list.",
+    "projectNotFound": "Project not found: {name}.\nType 'projects' to see all projects."
   }
 }

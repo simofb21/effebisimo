@@ -1,34 +1,103 @@
 {
   "help": {
-    "title": "Comandi disponibili:",
+    "title": "Comandi disponibili (digita o clicca su un comando):",
     "whoami": "Scopri chi sono",
-    "gimme_cv": "Scarica il mio CV (JPEG) sul tuo dispositivo",
-    "projects": "Mostra l'elenco dei progetti. Usare projects [nome_progetto] per ottenere informazioni su un singolo progetto",
-    "best-ride": "Apre Best-Ride : Il mio progetto principale",
-    "links": "Mostra i links a tutti i miei profili su diverse piattaforme",
+    "gimme_cv": "Scarica il mio CV (JPEG) sul dispositivo",
+    "projects": "Mostra l'elenco dei progetti. Usa 'projects [nome]' per i dettagli",
+    "best-ride": "Apre Best-Ride: il mio progetto principale",
+    "links": "Mostra i link a tutti i miei profili",
     "cycling": "Scopri la mia storia ciclistica",
-    "lang": "Cambia la lingua",
-    "clear": "Pulizia del terminale"
+    "lang": "Cambia la lingua (lang it / lang en)",
+    "clear": "Pulisce il terminale"
   },
   "actions": {
-    "cv_downloaded": "Download del CV avviato (cv.jpeg)...",
+    "cv_downloaded": "Download del CV avviato (CV_Simone.jpeg)...",
     "best_ride_opened": "Apertura di https://best-ride.vercel.app in una nuova scheda..."
   },
-  "placeholder": {
-    "whoami": "[placeholder] Qui ci sarà la mia descrizione e una foto.",
-    "links": "[placeholder] Qui ci saranno i link ai miei profili.",
-    "cycling": "[placeholder] Qui ci sarà la mia storia ciclistica con una galleria."
+  "whoami": {
+    "h1": "Simone",
+    "intro": "Sono Simone: Studente di Informatica all'Università degli Studi di Milano, ciclista a livello amatoriale.",
+    "sections": {
+      "cycling": {
+        "title": "Ciclismo",
+        "body": "Sono sempre stato un ciclista a livello agonistico; da 2 anni ormai però mi dedico allo sport a livello amatoriale, sempre dando il massimo."
+      },
+      "cs": {
+        "title": "Informatica",
+        "body": "Amo programmare, sperimentare nuove tecnologie e costruire progetti concreti da zero. Sono particolarmente affascinato dal settore dell'Intelligenza Artificiale, dallo sviluppo web moderno e dall'analisi dei dati applicata allo sport."
+      },
+      "education": {
+        "title": "Istruzione",
+        "body": "Ora ho appena iniziato la Triennale in Informatica a UniMi. In precedenza ho frequentato l'Istituto Tecnico Informatico Galilei di Crema."
+      },
+      "work": {
+        "title": "Cosa faccio",
+        "body": "Sono disponibile per collaborare a progetti, se hai bisogno contattami alla mia email: "
+      },
+      "passions": {
+        "title": "Passioni",
+        "body": "• Sport: Ciclismo, sport in generale, calcio, fantacalcio.\n• Musica: Amo ascoltare musica che mi gasi mentre vado in bici. In particolare mi piace il rap italiano underground.\n• Informatica: Programmare è sicuramente una passione, ma mi piace anche partecipare a CTF (Capture The Flag), competizioni di cybersecurity; per esempio ho partecipato ai progetti di OliCyber.it."
+      },
+      "other": {
+        "title": "Altro",
+        "body": "Niente da aggiungere."
+      }
+    }
+  },
+  "links": {
+    "title": "# Clicca su un link per aprirlo:"
+  },
+  "cycling": {
+    "description": "Ho iniziato presto, e ancora dentro tengo accesa la stessa passione. Anche se le gambe non sono di certo quelle di Pogačar.",
+    "scrollHint": "↔ Scorri le foto (5):"
   },
   "projects": {
-    "hint": "Utilizzo: projects [nome_progetto]",
-    "detail": "Progetto {name} (placeholder attuale). Qui compariranno le informazioni."
+    "hint": "Utilizzo: projects [nome_progetto] (oppure clicca su una cartella qui sopra)",
+    "noSource": "Codice sorgente non disponibile",
+    "labels": {
+      "status": "Status",
+      "tech": "Linguaggi usati",
+      "repo": "Link / Repo"
+    },
+    "status": {
+      "active-dev": "Attivo - In sviluppo",
+      "active-done": "Attivo - Sviluppo terminato",
+      "archived": "Archiviato",
+      "closed": "Chiuso"
+    },
+    "items": {
+      "best-ride": {
+        "description": "PWA che analizza le tue attività di ciclismo generando analisi dettagliate dei tuoi allenamenti grazie all'AI. Mostra statistiche come Record di potenza, TSS, dettagli degli allenamenti ecc."
+      },
+      "mercatino": {
+        "description": "Sito web per clienti e Gestionale del Mercatino dei Libri usati di Crema. Realizzato in collaborazione con Andrea Parolari."
+      },
+      "effebisimo": {
+        "description": "Ciò che stai vedendo ora."
+      },
+      "iris": {
+        "description": "Progetto realizzato durante lo stage alla BiCtrl di Lipsia. Frontend di un'applicazione interna all'azienda."
+      },
+      "appunti-unimi": {
+        "description": "Dispense delle lezioni all'Università."
+      },
+      "meteo-api": {
+        "description": "Web app che utilizza un'API esterna per fornire informazioni sul meteo di alcune località del territorio Lombardo."
+      },
+      "fb-bike": {
+        "description": "Sito web in cui una volta pubblicavo articoli sul ciclismo."
+      },
+      "donatos": {
+        "description": "Web app che punta a far comunicare utenti all'interno di una stessa rete in maniera semplice e affidabile."
+      }
+    }
   },
   "lang": {
-    "changed": "Lingua impostata: Italiano",
-    "usage": "Utilizzo: lang en"
+    "changed": "Lingua impostata: Italiano 🇮🇹",
+    "usage": "Utilizzo: lang [it|en]"
   },
   "errors": {
-    "notFound": "{cmd}: comando non trovato. \nDigita 'man' per la lista.",
-    "projectNotFound": "Progetto non trovato: {name}. \nDigita 'projects' per l'elenco."
+    "notFound": "{cmd}: comando non trovato.\nDigita 'man' per la lista dei comandi.",
+    "projectNotFound": "Progetto non trovato: {name}.\nDigita 'projects' per vedere l'elenco completo."
   }
 }

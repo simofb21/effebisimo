@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { projectsList } from "~/data/content";
-import ProjectDetailOut from "~/components/output/ProjectDetailOut.vue";
-import WhoamiOut from "~/components/output/WhoamiOut.vue";
-import LinksOut from "~/components/output/LinksOut.vue";
-import CyclingOut from "~/components/output/CyclingOut.vue";
+import ProjectDetailOut from "./output/ProjectDetailOut.vue";
+import WhoamiOut from "./output/WhoamiOut.vue";
+import LinksOut from "./output/LinksOut.vue";
+import CyclingOut from "./output/CyclingOut.vue";
 
 const { t } = useI18n();
 const { lines, run, complete, navigate } = useTerminal();
@@ -112,7 +112,7 @@ function onKey(e: KeyboardEvent) {
       <!-- DETTAGLIO SINGOLO PROGETTO -->
       <ProjectDetailOut
         v-else-if="l.type === 'project-detail'"
-        :slug="l.params!.slug"
+        :slug="l.params?.slug ?? ''"
       />
 
       <!-- WHOAMI -->
@@ -126,10 +126,10 @@ function onKey(e: KeyboardEvent) {
 
       <!-- ERRORI E TESTI SEMPLICI -->
       <div v-else-if="l.type === 'error'" class="out err whitespace-pre">
-        {{ t(l.key!, l.params ?? {}) }}
+        {{ t(l.key ?? "", l.params ?? {}) }}
       </div>
       <div v-else class="out whitespace-pre">
-        {{ t(l.key!, l.params ?? {}) }}
+        {{ t(l.key ?? "", l.params ?? {}) }}
       </div>
     </div>
 
