@@ -1,0 +1,30 @@
+{
+  "cmd": { "help": "man" },
+  "help": {
+    "title": "Available commands:",
+    "whoami": "who I am, with a photo of me",
+    "gimme_cv": "opens my CV (PDF)",
+    "projects": "project list (projects <name> for details)",
+    "best-ride": "opens best-ride.vercel.app in a new tab",
+    "links": "my profiles: Strava, GitHub, etc.",
+    "cycling": "my cycling story with photos",
+    "lang": "change language: lang it | lang en",
+    "clear": "clears the terminal"
+  },
+  "placeholder": {
+    "whoami": "[placeholder] My description and a photo will go here.",
+    "gimme_cv": "[placeholder] My CV will open here.",
+    "best-ride": "[placeholder] best-ride.vercel.app will open here.",
+    "links": "[placeholder] Links to my profiles will go here.",
+    "cycling": "[placeholder] My cycling story and a gallery will go here."
+  },
+  "projects": {
+    "hint": "Usage: projects <name>",
+    "detail": "Project {name} (current placeholder). Details will appear here."
+  },
+  "lang": { "changed": "Language set: English", "usage": "Usage: lang it | lang en" },
+  "errors": {
+    "notFound": "{cmd}: command not found. Type 'man' for the list.",
+    "projectNotFound": "Project not found: {name}. Type 'projects' for the list."
+  }
+}
