@@ -47,8 +47,29 @@ export function useTerminal() {
         push(input, "help");
         break;
       case "whoami":
-      case "gimme_cv":
-      case "best-ride":
+      case "gimme_cv": {
+        push(input, "text", "actions.cv_downloaded");
+        if (import.meta.client) {
+          const link = document.createElement("a");
+          link.href = "/cv.jpeg";
+          link.download = "CV_Simone.jpeg"; // Puoi cambiare il nome con cui verrà salvato il file
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+        break;
+      }
+      case "best-ride": {
+        push(input, "text", "actions.best_ride_opened");
+        if (import.meta.client) {
+          window.open(
+            "https://best-ride.vercel.app",
+            "_blank",
+            "noopener,noreferrer",
+          );
+        }
+        break;
+      }
       case "links":
       case "cycling":
         push(input, "text", `placeholder.${cmd}`);

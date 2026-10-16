@@ -2,7 +2,7 @@
   "help": {
     "title": "Comandi disponibili:",
     "whoami": "Scopri chi sono",
-    "gimme_cv": "Apre il mio CV (PDF) in un'altra scheda del browser",
+    "gimme_cv": "Scarica il mio CV",
     "projects": "Mostra l'elenco dei progetti. Usare projects [nome_progetto] per ottenere informazioni su un singolo progetto",
     "best-ride": "Apre Best-Ride : Il mio progetto principale",
     "links": "Mostra i links a tutti i miei profili su diverse piattaforme",

@@ -2,7 +2,7 @@
   "help": {
     "title": "Available commands:",
     "whoami": "Print user identity and bio",
-    "gimme_cv": "Open curriculum vitae (PDF) in a new browser tab",
+    "gimme_cv": "Download my CV",
     "projects": "List available projects. Use 'projects [project_name]' for details",
     "best-ride": "Launch Best-Ride: my core project",
     "links": "Display links to external profiles and platforms",
