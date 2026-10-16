@@ -1,10 +1,9 @@
 {
-  "cmd": { "help": "man" },
   "help": {
     "title": "Available commands:",
     "whoami": "who I am, with a photo of me",
     "gimme_cv": "opens my CV (PDF)",
-    "projects": "project list (projects <name> for details)",
+    "projects": "project list (projects [name] for details)",
     "best-ride": "opens best-ride.vercel.app in a new tab",
     "links": "my profiles: Strava, GitHub, etc.",
     "cycling": "my cycling story with photos",
@@ -19,7 +18,7 @@
     "cycling": "[placeholder] My cycling story and a gallery will go here."
   },
   "projects": {
-    "hint": "Usage: projects <name>",
+    "hint": "Usage: projects [name]",
     "detail": "Project {name} (current placeholder). Details will appear here."
   },
   "lang": { "changed": "Language set: English", "usage": "Usage: lang it | lang en" },

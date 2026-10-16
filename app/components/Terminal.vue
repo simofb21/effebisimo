@@ -12,7 +12,7 @@ const helpItems = ['whoami', 'gimme_cv', 'projects', 'best-ride', 'links', 'cycl
 
 onMounted(async () => {
   await sleep(700)
-  for (const ch of t('cmd.help')) { input.value += ch; await sleep(90) }
+  for (const ch of 'man') { input.value += ch; await sleep(90) }
   await sleep(350)
   run(input.value)
   input.value = ''
@@ -57,8 +57,8 @@ if (e.key === 'Enter') submit()
         <p class="dim">{{ t('projects.hint') }}</p>
       </div>
 
-      <div v-else-if="l.type === 'error'" class="out err">{{ l.payload }}</div>
-      <div v-else class="out">{{ l.payload }}</div>
+    <div v-else-if="l.type === 'error'" class="out err">{{ t(l.key!, l.params ?? {}) }}</div>
+    <div v-else class="out">{{ t(l.key!, l.params ?? {}) }}</div>
     </div>
 
    <div class="prompt">
