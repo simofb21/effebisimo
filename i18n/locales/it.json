@@ -21,7 +21,10 @@
     "hint": "Usa: projects [nome]",
     "detail": "Progetto {name} (placeholder attuale). Qui compariranno le informazioni."
   },
-  "lang": { "changed": "Lingua impostata: Italiano", "usage": "Uso: lang it | lang en" },
+  "lang": {
+    "changed": "Lingua impostata: Italiano",
+    "usage": "Uso: lang it | lang en"
+  },
   "errors": {
     "notFound": "{cmd}: comando non trovato. Digita 'suggerimenti' per la lista.",
     "projectNotFound": "Progetto non trovato: {name}. Digita 'projects' per l'elenco."

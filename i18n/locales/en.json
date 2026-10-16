@@ -21,7 +21,10 @@
     "hint": "Usage: projects [name]",
     "detail": "Project {name} (current placeholder). Details will appear here."
   },
-  "lang": { "changed": "Language set: English", "usage": "Usage: lang it | lang en" },
+  "lang": {
+    "changed": "Language set: English",
+    "usage": "Usage: lang it | lang en"
+  },
   "errors": {
     "notFound": "{cmd}: command not found. Type 'man' for the list.",
     "projectNotFound": "Project not found: {name}. Type 'projects' for the list."
