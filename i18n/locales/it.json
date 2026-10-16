@@ -1,14 +1,14 @@
 {
   "help": {
     "title": "Comandi disponibili:",
-    "whoami": "chi sono, con una mia foto",
+    "whoami": "Scopri chi sono",
     "gimme_cv": "Apre il mio CV (PDF) in un'altra scheda del browser",
-    "projects": "elenco dei progetti (projects [nome] per i dettagli)",
-    "best-ride": "apre best-ride.vercel.app in una nuova scheda",
-    "links": "i miei profili: Strava, GitHub, ecc.",
-    "cycling": "la mia storia ciclistica con foto",
-    "lang": "cambia lingua: lang it | lang en",
-    "clear": "pulisce il terminale"
+    "projects": "Mostra l'elenco dei progetti. Usare projects [nome_progetto] per ottenere informazioni su un singolo progetto",
+    "best-ride": "Apre Best-Ride : Il mio progetto principale",
+    "links": "Mostra i links a tutti i miei profili su diverse piattaforme",
+    "cycling": "Scopri la mia storia ciclistica",
+    "lang": "Cambia la lingua",
+    "clear": "Pulizia del terminale"
   },
   "placeholder": {
     "whoami": "[placeholder] Qui ci sarà la mia descrizione e una foto.",
@@ -18,15 +18,15 @@
     "cycling": "[placeholder] Qui ci sarà la mia storia ciclistica con una galleria."
   },
   "projects": {
-    "hint": "Usa: projects [nome]",
+    "hint": "Utilizzo: projects [nome_progetto]",
     "detail": "Progetto {name} (placeholder attuale). Qui compariranno le informazioni."
   },
   "lang": {
     "changed": "Lingua impostata: Italiano",
-    "usage": "Uso: lang it | lang en"
+    "usage": "Utilizzo: lang en"
   },
   "errors": {
-    "notFound": "{cmd}: comando non trovato. Digita 'suggerimenti' per la lista.",
-    "projectNotFound": "Progetto non trovato: {name}. Digita 'projects' per l'elenco."
+    "notFound": "{cmd}: comando non trovato. \nDigita 'man' per la lista.",
+    "projectNotFound": "Progetto non trovato: {name}. \nDigita 'projects' per l'elenco."
   }
 }

@@ -1,32 +1,32 @@
 {
   "help": {
     "title": "Available commands:",
-    "whoami": "who I am, with a photo of me",
-    "gimme_cv": "opens my CV (PDF)",
-    "projects": "project list (projects [name] for details)",
-    "best-ride": "opens best-ride.vercel.app in a new tab",
-    "links": "my profiles: Strava, GitHub, etc.",
-    "cycling": "my cycling story with photos",
-    "lang": "change language: lang it | lang en",
-    "clear": "clears the terminal"
+    "whoami": "Print user identity and bio",
+    "gimme_cv": "Open curriculum vitae (PDF) in a new browser tab",
+    "projects": "List available projects. Use 'projects [project_name]' for details",
+    "best-ride": "Launch Best-Ride: my core project",
+    "links": "Display links to external profiles and platforms",
+    "cycling": "Show cycling history and background",
+    "lang": "Switch language",
+    "clear": "Clear the terminal screen"
   },
   "placeholder": {
-    "whoami": "[placeholder] My description and a photo will go here.",
-    "gimme_cv": "[placeholder] My CV will open here.",
-    "best-ride": "[placeholder] best-ride.vercel.app will open here.",
-    "links": "[placeholder] Links to my profiles will go here.",
-    "cycling": "[placeholder] My cycling story and a gallery will go here."
+    "whoami": "[placeholder] Bio description and photo will be displayed here.",
+    "gimme_cv": "[placeholder] CV will be opened here.",
+    "best-ride": "[placeholder] best-ride.vercel.app will be launched here.",
+    "links": "[placeholder] Profile links will be displayed here.",
+    "cycling": "[placeholder] Cycling history and gallery will be displayed here."
   },
   "projects": {
-    "hint": "Usage: projects [name]",
-    "detail": "Project {name} (current placeholder). Details will appear here."
+    "hint": "Usage: projects [project_name]",
+    "detail": "Project {name} (current placeholder). Detailed information will appear here."
   },
   "lang": {
     "changed": "Language set: English",
-    "usage": "Usage: lang it | lang en"
+    "usage": "Usage: lang it"
   },
   "errors": {
-    "notFound": "{cmd}: command not found. Type 'man' for the list.",
-    "projectNotFound": "Project not found: {name}. Type 'projects' for the list."
+    "notFound": "{cmd}: command not found. \nType 'man' for manual entry.",
+    "projectNotFound": "Project not found: {name}. \nType 'projects' for the list."
   }
 }
