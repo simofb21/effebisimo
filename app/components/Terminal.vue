@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { projects } from "~/data/content";
+import { projectsList } from "~/data/content";
+import ProjectDetailOut from "~/components/output/ProjectDetailOut.vue";
+import WhoamiOut from "~/components/output/WhoamiOut.vue";
+import LinksOut from "~/components/output/LinksOut.vue";
+import CyclingOut from "~/components/output/CyclingOut.vue";
 
 const { t } = useI18n();
 const { lines, run, complete, navigate } = useTerminal();
@@ -37,15 +41,22 @@ watch(
   () => lines.value.length,
   async () => {
     await nextTick();
-    window.scrollTo({ top: document.body.scrollHeight });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   },
 );
+
 function submit() {
   if (typing.value) return;
   run(input.value);
   input.value = "";
   inputEl.value?.focus();
 }
+
+function runQuickCommand(cmdText: string) {
+  if (typing.value) return;
+  run(cmdText);
+}
+
 function onKey(e: KeyboardEvent) {
   if (e.key === "Enter") submit();
   else if (e.key === "Tab") {
@@ -72,27 +83,57 @@ function onKey(e: KeyboardEvent) {
         {{ l.cmd }}
       </div>
 
+      <!-- MAN / HELP -->
       <div v-if="l.type === 'help'" class="out">
         <p>{{ t("help.title") }}</p>
         <div v-for="c in helpItems" :key="c" class="row">
-          <span class="cmd">{{ c }}</span
-          ><span>{{ t(`help.${c}`) }}</span>
+          <span class="cmd clickable" @click.stop="runQuickCommand(c)">{{
+            c
+          }}</span>
+          <span>{{ t(`help.${c}`) }}</span>
         </div>
       </div>
 
+      <!-- ELENCO PROGETTI -->
       <div v-else-if="l.type === 'dirs'" class="out">
         <div class="dirs">
-          <span v-for="p in projects" :key="p" class="dir">{{ p }}/</span>
+          <span
+            v-for="p in projectsList"
+            :key="p.slug"
+            class="dir clickable"
+            @click.stop="runQuickCommand(`projects ${p.slug}`)"
+          >
+            {{ p.slug }}/
+          </span>
         </div>
         <p class="dim">{{ t("projects.hint") }}</p>
       </div>
 
-      <div v-else-if="l.type === 'error'" class="out err">
+      <!-- DETTAGLIO SINGOLO PROGETTO -->
+      <ProjectDetailOut
+        v-else-if="l.type === 'project-detail'"
+        :slug="l.params!.slug"
+      />
+
+      <!-- WHOAMI -->
+      <WhoamiOut v-else-if="l.type === 'whoami'" />
+
+      <!-- LINKS -->
+      <LinksOut v-else-if="l.type === 'links'" />
+
+      <!-- CYCLING -->
+      <CyclingOut v-else-if="l.type === 'cycling'" />
+
+      <!-- ERRORI E TESTI SEMPLICI -->
+      <div v-else-if="l.type === 'error'" class="out err whitespace-pre">
         {{ t(l.key!, l.params ?? {}) }}
       </div>
-      <div v-else class="out">{{ t(l.key!, l.params ?? {}) }}</div>
+      <div v-else class="out whitespace-pre">
+        {{ t(l.key!, l.params ?? {}) }}
+      </div>
     </div>
 
+    <!-- RIGA DI INPUT -->
     <div class="prompt">
       <span class="user">visitor@fb.simo</span>:<span class="path">~</span>$
       <span class="field">
@@ -100,7 +141,7 @@ function onKey(e: KeyboardEvent) {
           ref="inputEl"
           v-model="input"
           :readonly="typing"
-          :style="{ width: input.length + 1 + 'ch' }"
+          :style="{ width: Math.max(input.length + 1, 2) + 'ch' }"
           enterkeyhint="send"
           autocomplete="off"
           autocapitalize="off"

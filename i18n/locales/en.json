@@ -28,5 +28,9 @@
   "errors": {
     "notFound": "{cmd}: command not found. \nType 'man' for manual entry.",
     "projectNotFound": "Project not found: {name}. \nType 'projects' for the list."
+  },
+  "actions": {
+    "cv_downloaded": "Downloading CV (cv.jpeg)...",
+    "best_ride_opened": "Opening https://best-ride.vercel.app in a new tab..."
   }
 }

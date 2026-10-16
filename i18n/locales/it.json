@@ -2,7 +2,7 @@
   "help": {
     "title": "Comandi disponibili:",
     "whoami": "Scopri chi sono",
-    "gimme_cv": "Scarica il mio CV",
+    "gimme_cv": "Scarica il mio CV (JPEG) sul tuo dispositivo",
     "projects": "Mostra l'elenco dei progetti. Usare projects [nome_progetto] per ottenere informazioni su un singolo progetto",
     "best-ride": "Apre Best-Ride : Il mio progetto principale",
     "links": "Mostra i links a tutti i miei profili su diverse piattaforme",
@@ -10,10 +10,12 @@
     "lang": "Cambia la lingua",
     "clear": "Pulizia del terminale"
   },
+  "actions": {
+    "cv_downloaded": "Download del CV avviato (cv.jpeg)...",
+    "best_ride_opened": "Apertura di https://best-ride.vercel.app in una nuova scheda..."
+  },
   "placeholder": {
     "whoami": "[placeholder] Qui ci sarà la mia descrizione e una foto.",
-    "gimme_cv": "[placeholder] Qui si aprirà il mio CV.",
-    "best-ride": "[placeholder] Qui si aprirà best-ride.vercel.app.",
     "links": "[placeholder] Qui ci saranno i link ai miei profili.",
     "cycling": "[placeholder] Qui ci sarà la mia storia ciclistica con una galleria."
   },
