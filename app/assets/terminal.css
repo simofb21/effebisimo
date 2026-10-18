@@ -457,3 +457,67 @@ a,
     font-size: 10px;
   }
 }
+/* --- WHOAMI & ASCII PHOTO FIX --- */
+.whoami-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.whoami-photo {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.ascii-box {
+  background: #080808;
+  border: 1px dashed var(--border);
+  padding: 0.4rem;
+  max-width: 100%;
+}
+.whoami-ascii-art {
+  margin: 0;
+  color: var(--green);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.2;
+  overflow-x: auto;
+}
+.whoami-text {
+  min-width: 0; /* Impedisce ai testi lunghi di sballare il grid su mobile */
+  word-break: break-word;
+}
+.whoami-h1 {
+  color: var(--green);
+  font-size: 1.3em;
+  margin: 0 0 0.3rem 0;
+}
+.whoami-intro {
+  margin-bottom: 1rem;
+}
+.whoami-section {
+  margin-bottom: 0.9rem;
+}
+.whoami-h2 {
+  color: var(--blue);
+  font-size: 1.05em;
+  margin: 0.6rem 0 0.2rem 0;
+}
+
+/* --- RESPONSIVE MOBILE FIX --- */
+@media (max-width: 768px) {
+  .whoami-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .term {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+  .out {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

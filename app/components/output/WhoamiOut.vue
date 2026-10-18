@@ -1,6 +1,22 @@
 <script setup lang="ts">
-import ShellImage from "./ShellImage.vue";
 const { t } = useI18n();
+
+const asciiName = [
+  "  ███████╗██╗███╗   ███╗ ██████╗ ",
+  "  ██╔════╝██║████╗ ████║██╔═══██╗",
+  "  ███████╗██║██╔████╔██║██║   ██║",
+  "  ╚════██║██║██║╚██╔╝██║██║   ██║",
+  "  ███████║██║██║ ╚═╝ ██║╚██████╔╝",
+  "  ╚══════╝╚═╝╚═╝     ╚═╝ ╚═════╝ ",
+  "  ███████╗██╗   ██╗███████╗ █████╗ ██████╗ ",
+  "  ██╔════╝██║   ██║██╔════╝██╔══██╗██╔══██╗",
+  "  █████╗  ██║   ██║███████╗███████║██████╔╝",
+  "  ██╔══╝  ██║   ██║╚════██║██╔══██║██╔══██╗",
+  "  ██║     ╚██████╔╝███████║██║  ██║██║  ██║",
+  "  ╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝",
+  "                                           ",
+  "          [ user: simofusar ]              ",
+];
 
 const sections = ["cycling", "cs", "education", "work", "passions", "other"];
 </script>
@@ -8,7 +24,16 @@ const sections = ["cycling", "cs", "education", "work", "passions", "other"];
 <template>
   <div class="out whoami-grid">
     <div class="whoami-photo">
-      <ShellImage src="/me.jpg" alt="Simone" caption="visitor@fb.simo" />
+      <div class="shell-img-box ascii-box">
+        <div class="shell-img-bar">
+          <span>+--[ identity: simofusar ]</span>
+          <span class="shell-img-dots">[-][x]</span>
+        </div>
+        <pre
+          class="whoami-ascii-art"
+        ><code><span v-for="(row, idx) in asciiName" :key="idx">{{ row }}
+</span></code></pre>
+      </div>
     </div>
 
     <div class="whoami-text">
