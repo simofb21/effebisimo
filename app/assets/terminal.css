@@ -1,14 +1,28 @@
 :root {
-  --bg: #000;
+  --bg: #000000;
   --fg: #d4d4d4;
   --green: #33ff66;
   --blue: #5aa9ff;
   --red: #ff5f56;
-  --border: #333;
+  --border: #333333;
+  --box-bg: #080808;
 }
+
+/* --- TEMA CHIARO (Comando: color) --- */
+html.theme-light {
+  --bg: #ffffff;
+  --fg: #111827;
+  --green: #0044cc;
+  --blue: #0284c7;
+  --red: #dc2626;
+  --border: #cbd5e1;
+  --box-bg: #f8fafc;
+}
+
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -18,15 +32,22 @@ body {
     "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
   font-size: 15px;
   line-height: 1.6;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
+
 .term {
   min-height: 100dvh;
   padding: 1.5rem 2rem;
   width: 100%;
 }
+
 .block {
   margin-bottom: 1.25rem;
 }
+
+/* --- PROMPT E INPUT --- */
 .prompt {
   display: flex;
   flex-wrap: wrap;
@@ -39,7 +60,6 @@ body {
 .path {
   color: var(--blue);
 }
-
 .field {
   display: inline-flex;
   align-items: center;
@@ -62,7 +82,7 @@ body {
 .send {
   display: none;
   background: var(--green);
-  color: #000;
+  color: var(--bg);
   border: 0;
   border-radius: 4px;
   font: inherit;
@@ -80,6 +100,7 @@ body {
   }
 }
 
+/* --- OUTPUT GENERALE E LINK --- */
 .out {
   max-width: 90ch;
   margin-top: 0.3rem;
@@ -124,255 +145,6 @@ a,
   color: var(--green);
 }
 
-/* --- CARTELLE PROGETTI --- */
-.dirs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.5rem;
-  margin: 0.4rem 0;
-}
-.dir {
-  color: var(--blue);
-  font-weight: bold;
-}
-
-/* --- CORNICE IMMAGINI STILE SHELL --- */
-.shell-img-box {
-  margin: 0.75rem 0;
-  max-width: 460px;
-  border: 1px dashed var(--border);
-  background: #080808;
-  padding: 0.4rem;
-}
-.shell-img-bar {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85em;
-  color: var(--green);
-  border-bottom: 1px dashed var(--border);
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.4rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.shell-img-dots {
-  color: var(--fg);
-  opacity: 0.5;
-}
-.shell-img-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 340px;
-  object-fit: cover;
-  filter: contrast(1.05);
-}
-.shell-img-caption {
-  font-size: 0.85em;
-  color: var(--fg);
-  opacity: 0.75;
-  margin-top: 0.35rem;
-}
-
-/* --- DETTAGLIO PROGETTO --- */
-.project-card {
-  border-left: 2px solid var(--blue);
-  padding-left: 1rem;
-  margin-top: 0.5rem;
-}
-.project-title {
-  color: var(--green);
-  font-weight: bold;
-  font-size: 1.1em;
-}
-.project-meta {
-  margin: 0.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.meta-label {
-  color: var(--blue);
-  display: inline-block;
-  min-width: 14ch;
-}
-.project-desc {
-  margin: 0.75rem 0;
-}
-
-/* --- WHOAMI --- */
-.whoami-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  margin-top: 0.5rem;
-}
-.whoami-photo .shell-img-box {
-  margin: 0;
-}
-.whoami-title {
-  color: var(--green);
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* --- LINKS --- */
-.links-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-top: 0.4rem;
-}
-.link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-}
-.link-label {
-  color: var(--green);
-  min-width: 14ch;
-}
-
-/* --- CYCLING BOOK --- */
-.cycling-book {
-  margin-top: 0.5rem;
-}
-.book-header {
-  color: var(--green);
-  font-weight: bold;
-  overflow-x: hidden;
-}
-.book-intro {
-  font-style: italic;
-  opacity: 0.85;
-  margin-bottom: 1rem;
-}
-.book-chapter {
-  margin: 1.5rem 0;
-  padding-left: 0.75rem;
-  border-left: 1px dashed var(--border);
-}
-.chapter-title {
-  color: var(--blue);
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 650px) {
-  html,
-  body {
-    font-size: 14px;
-  }
-  .term {
-    padding: 1rem;
-  }
-  .prompt input {
-    font-size: 16px; /* evita lo zoom automatico di iOS */
-  }
-  .row {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0.5rem;
-  }
-  .whoami-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-  .shell-img-box {
-    max-width: 100%;
-  }
-  .project-card {
-    padding-left: 0.6rem;
-  }
-}
-@media (min-width: 1200px) {
-  .term {
-    padding: 2rem 3rem;
-  }
-}
-/* --- WHOAMI --- */
-.whoami-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  margin-top: 0.5rem;
-}
-.whoami-photo .shell-img-box {
-  margin: 0;
-}
-.whoami-h1 {
-  color: var(--green);
-  font-size: 1.3em;
-  margin: 0 0 0.3rem 0;
-}
-.whoami-intro {
-  margin-bottom: 1rem;
-}
-.whoami-section {
-  margin-bottom: 0.9rem;
-}
-.whoami-h2 {
-  color: var(--blue);
-  font-size: 1.05em;
-  margin: 0.6rem 0 0.2rem 0;
-}
-
-/* --- CYCLING SCROLL GALLERY --- */
-.cycling-section {
-  margin-top: 0.5rem;
-  max-width: 100%;
-}
-.cycling-quote {
-  border-left: 2px solid var(--green);
-  padding-left: 0.75rem;
-  margin: 0.5rem 0 1rem 0;
-}
-.cycling-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
-}
-.cycling-btns {
-  display: flex;
-  gap: 0.5rem;
-}
-.term-btn {
-  background: none;
-  border: 1px dashed var(--border);
-  color: var(--green);
-  font: inherit;
-  padding: 0.1rem 0.5rem;
-  cursor: pointer;
-}
-.term-btn:hover {
-  border-color: var(--green);
-}
-.cycling-carousel {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 0.5rem;
-  scrollbar-color: var(--green) #111;
-  scrollbar-width: thin;
-}
-.cycling-slide {
-  flex: 0 0 300px;
-  scroll-snap-align: start;
-}
-.cycling-slide .shell-img-box {
-  margin: 0;
-  max-width: 100%;
-}
-.cycling-slide .shell-img-frame img {
-  height: 220px;
-  object-fit: cover;
-}
 /* --- ARCH LINUX NEOFETCH / FASTFETCH --- */
 .neofetch-box {
   display: flex;
@@ -382,7 +154,7 @@ a,
 }
 .neofetch-ascii {
   margin: 0;
-  color: #1793d1; /* Blu ufficiale Arch Linux */
+  color: #1793d1;
   font-weight: bold;
   line-height: 1.15;
   font-size: 13px;
@@ -422,13 +194,13 @@ a,
   background: var(--green);
 }
 .c-ylw {
-  background: #f1fa8c;
+  background: #eab308;
 }
 .c-blu {
   background: var(--blue);
 }
 .c-mag {
-  background: #ff79c6;
+  background: #ec4899;
 }
 .c-cyn {
   background: #1793d1;
@@ -447,46 +219,108 @@ a,
   }
 }
 
-@media (max-width: 650px) {
-  .neofetch-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .neofetch-ascii {
-    font-size: 10px;
-  }
+/* --- CARTELLE E DETTAGLIO PROGETTI --- */
+.dirs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin: 0.4rem 0;
 }
-/* --- WHOAMI & ASCII PHOTO FIX --- */
+.dir {
+  color: var(--blue);
+  font-weight: bold;
+}
+.project-card {
+  border-left: 2px solid var(--blue);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+.project-title {
+  color: var(--green);
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.project-meta {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.meta-label {
+  color: var(--blue);
+  display: inline-block;
+  min-width: 14ch;
+}
+.project-desc {
+  margin: 0.75rem 0;
+}
+
+/* --- CORNICE IMMAGINI E BOX ASCII --- */
+.shell-img-box {
+  margin: 0.75rem 0;
+  max-width: 460px;
+  border: 1px dashed var(--border);
+  background: var(--box-bg);
+  padding: 0.4rem;
+}
+.shell-img-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: var(--green);
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shell-img-dots {
+  color: var(--fg);
+  opacity: 0.5;
+}
+.shell-img-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  filter: contrast(1.05);
+}
+.shell-img-caption {
+  font-size: 0.85em;
+  color: var(--fg);
+  opacity: 0.75;
+  margin-top: 0.35rem;
+}
+
+/* --- WHOAMI --- */
 .whoami-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1.5rem;
   align-items: start;
   margin-top: 0.5rem;
   width: 100%;
-  box-sizing: border-box;
 }
 .whoami-photo {
   max-width: 100%;
   overflow-x: auto;
 }
-.ascii-box {
-  background: #080808;
-  border: 1px dashed var(--border);
-  padding: 0.4rem;
+.whoami-photo .shell-img-box {
+  margin: 0;
   max-width: 100%;
 }
 .whoami-ascii-art {
   margin: 0;
   color: var(--green);
   font-family: inherit;
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 10px;
+  line-height: 1.15;
   overflow-x: auto;
 }
 .whoami-text {
-  min-width: 0; /* Impedisce ai testi lunghi di sballare il grid su mobile */
+  min-width: 0;
   word-break: break-word;
 }
 .whoami-h1 {
@@ -506,18 +340,125 @@ a,
   margin: 0.6rem 0 0.2rem 0;
 }
 
-/* --- RESPONSIVE MOBILE FIX --- */
+/* --- LINKS --- */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.link-label {
+  color: var(--green);
+  min-width: 14ch;
+}
+
+/* --- CYCLING SCROLL GALLERY --- */
+.cycling-section {
+  margin-top: 0.5rem;
+  max-width: 100%;
+}
+.cycling-quote {
+  border-left: 2px solid var(--green);
+  padding-left: 0.75rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.cycling-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.cycling-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+.term-btn {
+  background: none;
+  border: 1px dashed var(--border);
+  color: var(--green);
+  font: inherit;
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+}
+.term-btn:hover {
+  border-color: var(--green);
+}
+.cycling-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  scrollbar-color: var(--green) var(--box-bg);
+  scrollbar-width: thin;
+}
+.cycling-slide {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+}
+.cycling-slide .shell-img-box {
+  margin: 0;
+  max-width: 100%;
+}
+.cycling-slide .shell-img-frame img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* --- RESPONSIVE MOBILE & DESKTOP --- */
 @media (max-width: 768px) {
-  .whoami-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  html,
+  body {
+    font-size: 14px;
   }
   .term {
     padding: 1rem;
     overflow-x: hidden;
   }
+  .prompt input {
+    font-size: 16px; /* evita lo zoom automatico di iOS */
+  }
   .out {
     max-width: 100%;
-    overflow-x: auto;
+  }
+  .row {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0.5rem;
+  }
+  .neofetch-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .neofetch-ascii {
+    font-size: 10px;
+  }
+  .whoami-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .whoami-ascii-art {
+    font-size: 8px; /* Compatta SIMOFUSAR su schermi piccoli */
+  }
+  .shell-img-box {
+    max-width: 100%;
+  }
+  .project-card {
+    padding-left: 0.6rem;
+  }
+  .cycling-slide {
+    flex: 0 0 260px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .term {
+    padding: 2rem 3rem;
   }
 }

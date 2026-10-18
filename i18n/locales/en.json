@@ -8,11 +8,18 @@
     "links": "Show links to all my profiles",
     "cycling": "Discover my cycling story",
     "lang": "Switch language (lang it / lang en)",
-    "clear": "Clear the terminal"
+    "clear": "Clear the terminal",
+    "color": "Invert terminal colors (light / dark mode)",
+    "paolinux": "Secret call to an hacker"
+  },
+  "color": {
+    "light": "Theme set to: Light (White background / Blue-black text) ☀️",
+    "dark": "Theme set to: Dark (Default shell) 🌙"
   },
   "actions": {
     "cv_downloaded": "Downloading CV (CV_Simone.jpeg)...",
-    "best_ride_opened": "Opening https://best-ride.vercel.app in a new tab..."
+    "best_ride_opened": "Opening https://best-ride.vercel.app in a new tab...",
+    "paolinux": "chmod +x\n ./paolinux_files\nMa chi è Marlon oh"
   },
   "whoami": {
     "h1": "Simone",

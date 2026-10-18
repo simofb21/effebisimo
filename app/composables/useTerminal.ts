@@ -47,7 +47,33 @@ export function useTerminal() {
   function cmdWhoami(input: string) {
     push(input, "whoami");
   }
+  function cmdColor(input: string, args: string[]) {
+    if (import.meta.client) {
+      const root = document.documentElement;
+      const arg = args[0]?.toLowerCase();
 
+      if (arg === "light") {
+        root.classList.add("theme-light");
+      } else if (arg === "dark") {
+        root.classList.remove("theme-light");
+      } else {
+        root.classList.toggle("theme-light");
+      }
+
+      const isLight = root.classList.contains("theme-light");
+      push(input, "text", isLight ? "color.light" : "color.dark");
+    }
+  }
+  function cmdPaolinux(input: string) {
+    push(input, "text", "actions.paolinux");
+    if (import.meta.client) {
+      window.open(
+        "https://www.youtube.com/watch?v=_48FgdsEgoo&list=RD_48FgdsEgoo&start_radio=1",
+        "_blank",
+        "noopener,noreferrer",
+      );
+    }
+  }
   function cmdGimmeCv(input: string) {
     push(input, "text", "actions.cv_downloaded");
     if (import.meta.client) {
@@ -130,8 +156,10 @@ export function useTerminal() {
     projects: (input, args) => cmdProjects(input, args),
     links: (input) => cmdLinks(input),
     cycling: (input) => cmdCycling(input),
+    color: (input, args) => cmdColor(input, args), // <-- NUOVO COMANDO
     lang: (input, args) => cmdLang(input, args),
     clear: () => cmdClear(),
+    paolinux: (input) => cmdPaolinux(input), //POL?
   };
 
   // ==========================================

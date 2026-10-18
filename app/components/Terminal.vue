@@ -22,6 +22,8 @@ const helpItems = [
   "cycling",
   "lang",
   "clear",
+  "color",
+  "paolinux",
 ];
 
 async function typeAndRun(cmdText: string, speed = 70) {
