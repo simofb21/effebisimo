@@ -59,7 +59,7 @@ export const projectsList: ProjectData[] = [
     tech: "Vue.js",
     github: "https://github.com/simofb21/meteo.api",
     image: "/projects/meteo.jpg",
-    status: "active-done",
+    status: "archived",
   },
   {
     slug: "fb-bike",
@@ -88,7 +88,7 @@ export const statusEmoji: Record<ProjectStatus, string> = {
 
 export const socialLinks = [
   {
-    label: "Strava",  
+    label: "Strava",
     url: "https://www.strava.com/athletes/53796838",
     handle: "Simone Fusar Bassini",
   },
