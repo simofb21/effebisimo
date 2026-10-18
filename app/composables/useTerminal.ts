@@ -64,14 +64,32 @@ export function useTerminal() {
       push(input, "text", isLight ? "color.light" : "color.dark");
     }
   }
+
   function cmdPaolinux(input: string) {
     push(input, "text", "actions.paolinux");
     if (import.meta.client) {
+      // 1. Apre subito il primo link al press di Invio
       window.open(
-        "https://www.youtube.com/watch?v=_48FgdsEgoo&list=RD_48FgdsEgoo&start_radio=1",
+        "https://www.youtube.com/shorts/Sza9yRoEkXE",
         "_blank",
         "noopener,noreferrer",
       );
+
+      // 2. Appena l'utente clicca o preme un tasto tornando sul terminale, apre il secondo!
+      const openSecond = () => {
+        window.open(
+          "https://www.youtube.com/watch?v=_48FgdsEgoo&list=RD_48FgdsEgoo&start_radio=1",
+          "_blank",
+          "noopener,noreferrer",
+        );
+        window.removeEventListener("click", openSecond);
+        window.removeEventListener("keydown", openSecond);
+      };
+
+      setTimeout(() => {
+        window.addEventListener("click", openSecond, { once: true });
+        window.addEventListener("keydown", openSecond, { once: true });
+      }, 300);
     }
   }
   function cmdGimmeCv(input: string) {
